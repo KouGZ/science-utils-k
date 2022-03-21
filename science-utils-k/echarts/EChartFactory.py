@@ -85,21 +85,21 @@ options = {
 }
 mychart = EChartFactory.generateEchart("LineChart",global_args,options)
 mychart.output("html")
-princess.js_init_echart(mychart)
-princess.js_init_chartOption(mychart)
-princess.echart2html(mychart)
+# princess.js_init_echart(mychart)
+# princess.js_init_chartOption(mychart)
+# princess.echart2html(mychart)
 
-if "log" not in os.listdir():
-    os.mkdir("log")
-if "html" not in os.listdir("log"):
-        os.mkdir("log/html")
-        os.mkdir("log/html/js/")
-else:
-    print(1)
-    fd = os.open("log/html/main.html",os.O_RDWR|os.O_CREAT)
-    os.write(fd, str(princess.echart2html(mychart)).encode())
-    os.close(fd)
-    fd = os.open("log/html/js/charts_cfg.js",os.O_RDWR|os.O_CREAT|os.O_APPEND)
-    os.write(fd, princess.js_init_echart(mychart).encode())
-    os.write(fd, princess.js_init_chartOption(mychart).encode())
-    os.close(fd)
+# if "log" not in os.listdir():
+#     os.mkdir("log")
+# if "html" not in os.listdir("log"):
+#         os.mkdir("log/html")
+#         os.mkdir("log/html/js/")
+# else:
+#     print(1)
+#     fd = os.open("log/html/main.html",os.O_RDWR|os.O_CREAT)
+#     os.write(fd, str(princess.echart2html(mychart)).encode())
+#     os.close(fd)
+#     fd = os.open("log/html/js/charts_cfg.js",os.O_RDWR|os.O_CREAT|os.O_APPEND)
+#     os.write(fd, princess.js_init_echart(mychart).encode())
+#     os.write(fd, princess.js_init_chartOption(mychart).encode())
+#     os.close(fd)
