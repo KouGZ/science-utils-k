@@ -1,3 +1,3 @@
 # science-utils-k
 
-个人使用的科研工具包
+science-utils-k是一个用于机器学习的工具包
