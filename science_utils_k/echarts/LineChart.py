@@ -1,5 +1,5 @@
-from EChart import EChart
-from utils import princess
+from science_utils_k.echarts.EChart import EChart
+from science_utils_k.utils import princess
 import time
 import os
 

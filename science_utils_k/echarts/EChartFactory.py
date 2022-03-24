@@ -1,13 +1,8 @@
 #-*- coding:UTF-8 -*-
 import os,sys
-
 import numpy as np 
-parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
-sys.path.insert(0,parentdir)  
-from utils import princess
-import echarts
-from LineChart import LineChart
-from EChart import EChart
+from science_utils_k.utils import princess
+from science_utils_k import echarts
 
 class EChartFactory:
     """Echart图表工厂,负责生产图表
