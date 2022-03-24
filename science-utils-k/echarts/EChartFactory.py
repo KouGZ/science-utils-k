@@ -34,11 +34,11 @@ global_args = {
       
     }
 }
-x = np.arange(200)
+
 options = {
   'title': {
             'text': 'Classification',
-            'left': "40%"
+            # 'left': "40%"
         },
         'tooltip': {},
         'legend': {
@@ -47,18 +47,15 @@ options = {
                 'Test Instance Accuracy:',
                 'Test Class Accuracy:'
             ],
-            'top': 30
+            # 'top': 30
           
         },
         'xAxis': {
             'name': "epoch",
             'nameLocation': "end",
-            'data': np.arange(200).tolist(),
+            'data': np.arange(start=1,stop=201,step=1).tolist(),
             'axisLabel': {
                 'show': 'true'
-            },
-            'axisTick': {
-                'show': 'false',
             }
         },
         'yAxis': {
@@ -83,8 +80,8 @@ options = {
 
         ]
 }
-mychart = EChartFactory.generateEchart("LineChart",global_args,options)
-mychart.output("html")
+# mychart = EChartFactory.generateEchart("LineChart",global_args,options)
+# mychart.output("html")
 # princess.js_init_echart(mychart)
 # princess.js_init_chartOption(mychart)
 # princess.echart2html(mychart)
