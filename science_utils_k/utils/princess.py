@@ -14,11 +14,11 @@ def set_attr(options: dict, attr: list, value: any) -> str:
     exec_str += " = %s" % value
     print(exec_str)
     exec(exec_str)
-    print(options)
+    # print(options)
     return exec_str
 
 
-def load_html():
+def load_html(file_path=None):
     html_temp = '<!DOCTYPE html>\
 <html>\
 \
@@ -38,8 +38,10 @@ def load_html():
 <script src="js/charts_cfg.js"></script>\
 \
 </html>'
-    return BeautifulSoup(html_temp, features="lxml")
-
+    if file_path == None:
+        return BeautifulSoup(html_temp, features="lxml")
+    else:
+        return BeautifulSoup(open(file_path),features="lxml")
 
 def load_data(data) -> str:
     return str(data)
@@ -69,7 +71,7 @@ def js_init_echart(chart):
                 arg,
                 global_args["init"][arg]if global_args["init"][arg] != None else "null",
             )
-    init_js += ");"
+    init_js += ");\n"
     print(init_js)
     return init_js
 
@@ -81,13 +83,16 @@ def js_init_chartOption(chart):
         global_args["id"],
         options
     )
-    print(options_js)
+    options_js +=";\n"
     return options_js
 
 
-def echart2html(chart):
+def echart2html(chart,log_path=None):
     # echart_container = '&lt;div id="%s" style="float: left;"></div>' % chart.get_global_args()["id"]
-    soup = load_html()
+    if log_path == None:
+        soup = load_html()
+    else:
+        soup = load_html(file_path=log_path+"/html/main.html")
     echart_container = soup.new_tag("div", id=chart.get_global_args()["id"])
     soup.div.append(echart_container)
     return soup.prettify()

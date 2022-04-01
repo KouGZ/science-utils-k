@@ -1,5 +1,6 @@
 
 from abc import abstractclassmethod, abstractmethod
+from science_utils_k.utils import princess
 
 
 class EChart(object):
@@ -22,8 +23,11 @@ class EChart(object):
     def get_global_args(self):
         return self.global_args
 
-    def set_global_args(self):
-        pass
-
+    def set_global_args(self, attrs, values):
+        for attr, value in zip(attrs, values):
+            # print(attr)
+            # print(value)
+            attr = attr.split(".")
+            princess.set_attr(self.global_args, attr, value)
     def output(type):
         pass

@@ -1,15 +1,24 @@
 import numpy as np
 from science_utils_k.echarts.EChartFactory import EChartFactory
-import os
-import sys
+import envs
+import time
 
-print(os.getcwdb().decode())
-sys.path.append(os.getcwdb().decode())
-
-
-chart = EChartFactory.generateEchart("LineChart")
+time_stamp = time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())
+acc_chart01 = EChartFactory.generateEchart("LineChart")
+acc_chart02 = EChartFactory.generateEchart("LineChart")
 # chart.output("html")
-
+acc_chart01.set_global_args(
+    ["id",
+    "init.dom"],
+    ["'acc_chart01'",
+    "'document.getElementById(\"acc_chart01\")'"]
+)
+acc_chart02.set_global_args(
+   ["id",
+    "init.dom"],
+    ["'acc_chart02'",
+    "'document.getElementById(\"acc_chart02\")'"]
+)
 epochs = np.arange(start=1, stop=201, step=1).tolist()
 series = [{
     'name': 'Train Instance Accuracy:',
@@ -29,13 +38,24 @@ series = [{
 }
 
 ]
-chart.set_options([
+acc_chart01.set_options([
     "xAxis.data",
     "series"
 ], [
     epochs,
     series
 ])
-print(chart.get_options())
 
-chart.output("html")
+acc_chart02.set_options([
+    "xAxis.data",
+    "series"
+], [
+    epochs,
+    series
+])
+# print(acc_chart01.get_options())
+# print(acc_chart01.get_global_args())
+# print(acc_chart02.get_global_args())
+
+acc_chart01.output(time_stamp)
+acc_chart02.output(time_stamp)
