@@ -12,8 +12,8 @@ class EChart(object):
                     "dom": "document.getElementById('chart')",
                     "theme": None,
                     'options': {
-                        "width": 800,
-                        "height": 600
+                        "width": 600,
+                        "height": 500
                     }
 
                 }

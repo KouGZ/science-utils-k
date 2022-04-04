@@ -19,7 +19,7 @@ acc_chart02.set_global_args(
     ["'acc_chart02'",
     "'document.getElementById(\"acc_chart02\")'"]
 )
-epochs = np.arange(start=1, stop=201, step=1).tolist()
+epochs = np.arange(start=0, stop=200, step=1).tolist()
 series = [{
     'name': 'Train Instance Accuracy:',
     'type': 'line',

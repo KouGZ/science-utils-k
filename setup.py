@@ -1,10 +1,11 @@
-
+#!usr/bin/python
+# -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
 
 setup(
     name="science_utils_k",                                   # 包的分发名称，使用字母、数字、_、-
-    version="0.0.4",                                        # 版本号, 版本号规范：https://www.python.org/dev/peps/pep-0440/
+    version="0.0.6",                                        # 版本号, 版本号规范：https://www.python.org/dev/peps/pep-0440/
     author="kouguozhao",                                   # 作者名字
     author_email="kouguozhao@163.com",                     # 作者邮箱
     description="个人使用的科研工具包",                         # 包的简介描述

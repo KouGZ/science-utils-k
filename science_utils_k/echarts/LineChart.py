@@ -12,7 +12,7 @@ class LineChart(EChart):
         if options == None:
             self.options = {
                 'title': {
-                    'text': 'Classification',
+                    'text': '',
                 },
                 'tooltip': {},
                 'legend': {},

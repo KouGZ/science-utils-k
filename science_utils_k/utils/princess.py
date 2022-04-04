@@ -93,7 +93,7 @@ def echart2html(chart,log_path=None):
         soup = load_html()
     else:
         soup = load_html(file_path=log_path+"/html/main.html")
-    echart_container = soup.new_tag("div", id=chart.get_global_args()["id"])
+    echart_container = soup.new_tag("div", id=chart.get_global_args()["id"],style="float: left;")
     soup.div.append(echart_container)
     return soup.prettify()
 
